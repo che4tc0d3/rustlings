@@ -2,17 +2,18 @@
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+//The problem here was that all the element in the if and else if statement wasn't the same type so we just need to change that and put integers here we change
+// the floating number (2.0) to 2 and the string "Unknown" to 0 and it worked
 
 pub fn animal_habitat(animal: &str) -> &'static str {
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        2.0
+        2
     } else if animal == "snake" {
         3
     } else {
-        "Unknown"
+        0
     };
 
     // DO NOT CHANGE THIS STATEMENT BELOW

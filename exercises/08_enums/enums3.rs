@@ -5,10 +5,17 @@
 // Execute `rustlings hint enums3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// Here we consolidate our understanding of enum and start using match
+// The problems here were
+// First we need to implement all the variant of the enum (Message) with their type before continuing
+// Second we need to match the different element of the enum with the elements of the Struct State in order to use the functions bind to his function
 
 enum Message {
     // TODO: implement the message variant types based on their usage below
+    ChangeColor (i32, i32, i32),
+    Echo (String),
+    Move(Point),
+    Quit,
 }
 
 struct Point {
@@ -44,6 +51,13 @@ impl State {
         // TODO: create a match expression to process the different message variants
         // Remember: When passing a tuple as a function argument, you'll need extra parentheses:
         // fn function((t, u, p, l, e))
+        match  message {
+            Message::ChangeColor(r, g, b)=> self.change_color((r.try_into().unwrap(), g.try_into().unwrap(), b.try_into().unwrap())),
+            Message::Echo(text) => self.echo(text) ,
+            Message::Move(Point)  => self.move_position(Point),
+            Message::Quit => self.quit(),
+
+    }
     }
 }
 
